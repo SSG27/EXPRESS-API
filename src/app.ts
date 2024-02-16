@@ -1,5 +1,4 @@
 import express, { Request, Response } from 'express';
-import mongoose from "mongoose";
 import loggerMiddleware from './middlewares/logger';
 import CCode from "./models/ccModel";
 import SService from "./models/ssModel";
