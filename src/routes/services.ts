@@ -67,6 +67,7 @@ serviceRouter.get("/:id", async (req, res) => {
 });
 
 // get all streaming services with their monthly fee based on country code
+// http://localhost:3000/services/code/ae
 serviceRouter.get("/code/:countryCode", async (req, res) => {
     try {
         const countryCode = req.params.countryCode;

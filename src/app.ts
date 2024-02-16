@@ -3,7 +3,7 @@ import loggerMiddleware from './middlewares/logger';
 import CCode from "./models/ccModel";
 import SService from "./models/ssModel";
 import serviceRouter from './routes/services';
-import codesRouter from './routes/services';
+import codesRouter from './routes/codes';
 
 // import { connectToDb, getDb } from './db';
 const app = express();
