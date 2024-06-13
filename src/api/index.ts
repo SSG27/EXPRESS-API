@@ -1,6 +1,6 @@
 import app from "./app";
 import mongoose from "mongoose";
-const port = 3000;
+const port = 8000;
 const DB_URI = "mongodb://localhost:27017/country-code"
 
 async function main() {

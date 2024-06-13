@@ -4,22 +4,17 @@ import CCode from "./models/ccModel";
 import SService from "./models/ssModel";
 import serviceRouter from './routes/services';
 import codesRouter from './routes/codes';
+import cors from 'cors';
 
 // import { connectToDb, getDb } from './db';
 const app = express();
 
 // Use the logger middleware for all routes
+app.use(cors());
 app.use(loggerMiddleware);
 app.use(express.json())
 app.use("/services", serviceRouter)
 app.use("/codes", codesRouter)
-
-
-
-
-
-
-
 
   async function updateCountryCode(countryName: string, newCode: string, newServices: number[]) {
     const updateResult = await CCode.updateOne(
