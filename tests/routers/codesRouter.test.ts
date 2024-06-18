@@ -18,7 +18,7 @@ describe('Codes Router', () => {
     it('should create a new country code', async () => {
       const mockCode = { code: 'US', country: 'United States', services: [1, 2, 3] };
       const mockSave = jest.fn().mockResolvedValue(mockCode);
-      (CCode as any).mockImplementation(() => ({ save: mockSave }));
+      (CCode.prototype.save as jest.Mock) = mockSave;
 
       const response = await request(app)
         .post('/api/codes')
@@ -30,7 +30,7 @@ describe('Codes Router', () => {
 
     it('should return 500 on error', async () => {
       const mockSave = jest.fn().mockRejectedValue(new Error('Database Error'));
-      (CCode as any).mockImplementation(() => ({ save: mockSave }));
+      (CCode.prototype.save as jest.Mock) = mockSave;
 
       const response = await request(app)
         .post('/api/codes')
