@@ -47,7 +47,7 @@ describe('serviceRouter', () => {
             const res = await request(app).post('/services/newService').send({});
 
             expect(res.status).toBe(400);
-            expect(res.body).toEqual({ message: 'id and name of streaming service required' });
+            expect(res.body).toEqual({ message: 'All fields (id, name, monthly fee) are required.' });
         });
     });
 
